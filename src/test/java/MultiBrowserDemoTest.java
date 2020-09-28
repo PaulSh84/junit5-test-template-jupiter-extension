@@ -13,4 +13,12 @@ public class MultiBrowserDemoTest extends MultiBrowserTestTemplate {
         search.sendKeys("JUnit5 extensions");
         search.submit();
     }
+
+    @TestTemplate
+    public void testInMultipleBrowsersInParallel(WebDriver driver) {
+        driver.get("https://www.google.com/");
+        WebElement search = driver.findElement(By.name("q"));
+        search.sendKeys("JUnit5 Test template parallelized");
+        search.submit();
+    }
 }
